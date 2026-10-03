@@ -1,0 +1,36 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "DynamoDBAccess",
+      "Effect": "Allow",
+      "Action": [
+        "dynamodb:GetItem",
+        "dynamodb:PutItem",
+        "dynamodb:Query"
+      ],
+      "Resource": "arn:aws:dynamodb:us-east-1:000000000000:table/Puntajes"
+    },
+    {
+      "Sid": "SQSAccess",
+      "Effect": "Allow",
+      "Action": [
+        "sqs:SendMessage",
+        "sqs:ReceiveMessage",
+        "sqs:DeleteMessage",
+        "sqs:GetQueueAttributes"
+      ],
+      "Resource": "arn:aws:sqs:us-east-1:000000000000:puntajes"
+    },
+    {
+      "Sid": "LogsAccess",
+      "Effect": "Allow",
+      "Action": [
+        "logs:CreateLogGroup",
+        "logs:CreateLogStream",
+        "logs:PutLogEvents"
+      ],
+      "Resource": "arn:aws:logs:us-east-1:000000000000:*"
+    }
+  ]
+}
